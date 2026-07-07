@@ -72,8 +72,10 @@ Supports:
 This project is intended for educational and research purposes.
 
 ## 📸 Screenshots
-<img width="1913" height="968" alt="Screenshot 2026-06-08 164359" src="https://github.com/user-attachments/assets/4ad9c808-66a7-4048-849b-91beb38b6c9f" />
-<img width="1902" height="965" alt="Screenshot 2026-06-08 164457" src="https://github.com/user-attachments/assets/c8ba10f1-ba7a-405a-bad6-b55cbbb722c5" />
-<img width="1912" height="966" alt="Screenshot 2026-06-08 164631" src="https://github.com/user-attachments/assets/c2cfb2be-d26d-4235-b556-cb06e2584554" />
+<img width="1913" height="968" alt="Screenshot 2026-06-08 164359" src="https://github.com/user-attachments/assets/f0e25af3-104f-46b4-9723-6320a69766df" />
+<img width="1902" height="965" alt="Screenshot 2026-06-08 164457" src="https://github.com/user-attachments/assets/f3f1e920-f9b6-46ea-b328-6d1e59249bbd" />
+<img width="1912" height="966" alt="Screenshot 2026-06-08 164631" src="https://github.com/user-attachments/assets/649c7254-dfe3-4efb-8fab-a9aeeb77561c" />
+
+
 
 
