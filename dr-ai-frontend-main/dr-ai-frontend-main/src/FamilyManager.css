@@ -1,0 +1,218 @@
+/* ── Overlay & Modal ──────────────────────────────────────────────────────── */
+.fm-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.75); backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000; animation: fmFadeIn 0.2s ease;
+}
+@keyframes fmFadeIn { from{opacity:0} to{opacity:1} }
+
+.fm-modal {
+  background: var(--bg-surface2); border: 1px solid var(--border);
+  border-radius: 22px; width: 820px; max-width: 95vw; max-height: 88vh;
+  display: flex; flex-direction: column; overflow: hidden;
+  box-shadow: 0 32px 80px var(--shadow);
+  animation: fmSlideUp 0.28s cubic-bezier(0.16,1,0.3,1);
+}
+@keyframes fmSlideUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── Header ───────────────────────────────────────────────────────────────── */
+.fm-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 22px; border-bottom: 1px solid var(--border); flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(102,126,234,0.08), rgba(34,197,94,0.04));
+}
+.fm-header-left { display: flex; align-items: center; gap: 14px; }
+.fm-logo {
+  width: 48px; height: 48px; border-radius: 14px; font-size: 24px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 14px rgba(102,126,234,0.35); flex-shrink: 0;
+}
+.fm-header h2 { font-size: 18px; font-weight: 800; color: var(--text-primary); margin: 0 0 3px; }
+.fm-header p  { font-size: 12px; color: var(--text-muted); margin: 0; }
+.fm-close {
+  width: 32px; height: 32px; border: 1px solid var(--border);
+  background: transparent; border-radius: 8px; cursor: pointer;
+  color: var(--text-secondary); font-size: 13px; transition: all 0.2s;
+  display: flex; align-items: center; justify-content: center;
+}
+.fm-close:hover { background: var(--bg-hover); color: var(--error); border-color: var(--error); }
+
+/* ── Active Banner ────────────────────────────────────────────────────────── */
+.fm-active-banner {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 22px; background: rgba(102,126,234,0.08);
+  border-bottom: 1px solid var(--border); flex-shrink: 0;
+}
+.fm-active-label { font-size: 12px; color: var(--text-muted); }
+.fm-active-name  { font-size: 13px; font-weight: 700; color: var(--accent); }
+
+/* ── Body ─────────────────────────────────────────────────────────────────── */
+.fm-body { flex: 1; overflow-y: auto; padding: 20px 22px; }
+.fm-body::-webkit-scrollbar { width: 4px; }
+.fm-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.fm-loading {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; height: 200px; gap: 12px; color: var(--text-muted);
+}
+.fm-spinner {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 3px solid var(--border); border-top-color: var(--accent);
+  animation: fmSpin 0.8s linear infinite;
+}
+@keyframes fmSpin { to { transform: rotate(360deg); } }
+
+/* ── Member Grid ──────────────────────────────────────────────────────────── */
+.fm-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.fm-card {
+  background: var(--bg-surface); border: 2px solid var(--border);
+  border-radius: 16px; padding: 18px 14px; cursor: pointer;
+  transition: all 0.2s; display: flex; flex-direction: column;
+  align-items: center; gap: 6px; position: relative;
+  text-align: center;
+}
+.fm-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 8px 24px var(--shadow); }
+.fm-card.active { border-color: var(--accent); background: rgba(102,126,234,0.06); }
+
+.fm-card-avatar   { font-size: 40px; line-height: 1; margin-bottom: 4px; }
+.fm-card-name     { font-size: 14px; font-weight: 700; color: var(--text-primary); }
+.fm-card-relation { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+.fm-card-detail   { font-size: 11px; color: var(--text-secondary); }
+
+.fm-active-badge {
+  position: absolute; top: 8px; right: 8px;
+  background: var(--accent); color: white;
+  font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 10px;
+}
+
+.fm-card-actions {
+  display: flex; gap: 6px; margin-top: 6px;
+}
+.fm-btn-edit, .fm-btn-delete {
+  width: 30px; height: 30px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--bg-hover); cursor: pointer; font-size: 13px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+.fm-btn-edit:hover   { background: rgba(102,126,234,0.15); border-color: var(--accent); }
+.fm-btn-delete:hover { background: rgba(239,68,68,0.1); border-color: var(--error); }
+.fm-btn-delete:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.fm-card-add {
+  border-style: dashed; border-color: var(--border);
+  background: transparent; color: var(--text-muted);
+}
+.fm-card-add:hover { border-color: var(--accent); color: var(--accent); }
+.fm-add-icon { font-size: 32px; font-weight: 300; color: var(--text-muted); line-height: 1; }
+.fm-card-add:hover .fm-add-icon { color: var(--accent); }
+
+/* ── Add/Edit Form overlay ────────────────────────────────────────────────── */
+.fm-form-overlay {
+  position: absolute; inset: 0; background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px); display: flex; align-items: center;
+  justify-content: center; z-index: 10; border-radius: 22px;
+}
+.fm-form {
+  background: var(--bg-surface2); border: 1px solid var(--border);
+  border-radius: 18px; padding: 22px; width: 500px; max-width: 92vw;
+  max-height: 80vh; overflow-y: auto;
+  animation: fmSlideUp 0.22s cubic-bezier(0.16,1,0.3,1);
+}
+.fm-form::-webkit-scrollbar { width: 4px; }
+.fm-form::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.fm-form-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 16px;
+}
+.fm-form-header h3 { font-size: 16px; font-weight: 800; color: var(--text-primary); margin: 0; }
+.fm-form-header button {
+  width: 28px; height: 28px; border: 1px solid var(--border);
+  background: transparent; border-radius: 7px; cursor: pointer;
+  color: var(--text-secondary); font-size: 12px;
+}
+
+/* ── Avatar Picker ────────────────────────────────────────────────────────── */
+.fm-avatar-picker {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;
+  padding: 12px; background: var(--bg-surface); border-radius: 12px;
+  border: 1px solid var(--border);
+}
+.fm-avatar-btn {
+  width: 38px; height: 38px; border-radius: 10px; border: 2px solid transparent;
+  background: transparent; cursor: pointer; font-size: 20px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+.fm-avatar-btn:hover   { background: var(--bg-hover); border-color: var(--border); }
+.fm-avatar-btn.selected{ background: rgba(102,126,234,0.15); border-color: var(--accent); }
+
+/* ── Form Fields ──────────────────────────────────────────────────────────── */
+.fm-form-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px;
+}
+.fm-field { display: flex; flex-direction: column; gap: 5px; }
+.fm-field-full { grid-column: 1 / -1; }
+.fm-field label { font-size: 11px; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
+.fm-field input,
+.fm-field select,
+.fm-field textarea {
+  padding: 9px 12px; border-radius: 10px;
+  border: 1px solid var(--border); background: var(--input-bg);
+  color: var(--text-primary); font-size: 13px; outline: none;
+  transition: border-color 0.2s;
+}
+.fm-field input:focus,
+.fm-field select:focus,
+.fm-field textarea:focus  { border-color: var(--accent); }
+.fm-field textarea { resize: vertical; min-height: 70px; font-family: inherit; }
+
+.fm-error {
+  color: var(--error); font-size: 12px; padding: 8px 12px;
+  background: rgba(239,68,68,0.08); border-radius: 8px;
+  border: 1px solid rgba(239,68,68,0.2); margin-bottom: 12px;
+}
+
+.fm-form-actions {
+  display: flex; gap: 10px; justify-content: flex-end;
+}
+.fm-btn-cancel {
+  padding: 9px 18px; border-radius: 10px; border: 1px solid var(--border);
+  background: transparent; color: var(--text-secondary);
+  font-size: 13px; cursor: pointer; transition: all 0.2s;
+}
+.fm-btn-cancel:hover { background: var(--bg-hover); }
+.fm-btn-save {
+  padding: 9px 22px; border-radius: 10px; border: none;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white; font-size: 13px; font-weight: 700;
+  cursor: pointer; transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(102,126,234,0.35);
+}
+.fm-btn-save:hover    { opacity: 0.9; transform: translateY(-1px); }
+.fm-btn-save:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+/* ════════════════════════════════════════════════════════
+   MOBILE RESPONSIVE — Family Manager
+   ════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .fm-modal {
+    width: 100vw; max-width: 100vw;
+    height: 100dvh; border-radius: 0;
+  }
+  .fm-overlay { align-items: flex-end; padding: 0; }
+  .fm-header { padding: 14px 16px; }
+  .fm-body { padding: 14px; }
+  .fm-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
+  .fm-card { padding: 14px 10px; }
+  .fm-card-avatar { font-size: 32px; }
+  .fm-form { width: 100vw; max-width: 100vw; border-radius: 0; margin: 0; }
+  .fm-form-grid { grid-template-columns: 1fr !important; }
+  .fm-form-overlay { border-radius: 0; }
+}

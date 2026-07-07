@@ -1,0 +1,56 @@
+/* ─── Theme Variables ─────────────────────────────────────────────────────── */
+
+/* Dark Theme (default) */
+:root,
+[data-theme="dark"] {
+  --bg-primary:      #0c4a6e;
+  --bg-gradient:     linear-gradient(180deg, #0c4a6e 0%, #1e3a5f 30%, #2d4356 60%, #3d3d3d 100%);
+  --bg-surface:      #2d2d2d;
+  --bg-surface2:     #1e1e1e;
+  --bg-surface3:     #1a1a1a;
+  --bg-hover:        #3d3d3d;
+  --border:          #3d3d3d;
+  --text-primary:    #e0e0e0;
+  --text-secondary:  #b0b0b0;
+  --text-muted:      #888;
+  --text-faint:      #666;
+  --text-disabled:   #555;
+  --accent:          #667eea;
+  --accent2:         #764ba2;
+  --accent-bg:       rgba(102, 126, 234, 0.15);
+  --success:         #22c55e;
+  --error:           #ef4444;
+  --warning:         #f59e0b;
+  --shadow:          rgba(0, 0, 0, 0.5);
+  --input-bg:        #1e1e1e;
+  --bubble-bg:       #2d2d2d;
+  --bubble-border:   #3d3d3d;
+  --scrollbar-thumb: #4d4d4d;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --bg-primary:      #f0f7ff;
+  --bg-gradient:     linear-gradient(180deg, #dbeafe 0%, #e0f2fe 30%, #f0f9ff 60%, #f8fafc 100%);
+  --bg-surface:      #ffffff;
+  --bg-surface2:     #f8fafc;
+  --bg-surface3:     #f1f5f9;
+  --bg-hover:        #f1f5f9;
+  --border:          #e2e8f0;
+  --text-primary:    #1e293b;
+  --text-secondary:  #475569;
+  --text-muted:      #64748b;
+  --text-faint:      #94a3b8;
+  --text-disabled:   #cbd5e1;
+  --accent:          #667eea;
+  --accent2:         #764ba2;
+  --accent-bg:       rgba(102, 126, 234, 0.1);
+  --success:         #16a34a;
+  --error:           #dc2626;
+  --warning:         #d97706;
+  --shadow:          rgba(0, 0, 0, 0.1);
+  --input-bg:        #f8fafc;
+  --bubble-bg:       #ffffff;
+  --bubble-border:   #e2e8f0;
+  --scrollbar-thumb: #cbd5e1;
+}
